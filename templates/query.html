@@ -18,25 +18,26 @@
     </head>
     <body>
         <div class="container">
-            <form enctype="multipart/form-data" method="post" action="/">
+            <form method="post" action="/">
                 <div class="row">
                     <div class="col-ms-3">
-                        <p>Upload json file</p>
+                        <p>Query</p>
                     </div>
                     <div class="col-sm-3">
-                        <input name="file" type="file"accept=".json"/>
+                        <textarea cols="100" rows="5" name="query"></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="submit" value="Upload" />
+                        <input type="submit" value="query" />
                     </div>
-                    <div class="col-sm-6">{{status}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{error}}{{result}}
+                    </div>
                 </div>
             </form>
-        </div>
-        <div class="container">
-            <a href="/query">Show data</a>
         </div>
         <div class="container">
             {{result}}
