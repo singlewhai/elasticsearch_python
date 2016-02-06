@@ -20,11 +20,11 @@
         <div class="container">
             <form method="post" action="/">
                 <div class="row">
-                    <div class="col-ms-3">
+                    <div class="col-sm-3">
                         <p>Query</p>
                     </div>
                     <div class="col-sm-3">
-                        <textarea cols="100" rows="5" name="query"></textarea>
+                        <textarea cols="100" rows="5" name="query">{{error}}</textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -36,6 +36,18 @@
                     <div class="col-sm-6">
                         {{error}}{{result}}
                     </div>
+                </div>
+                <div class="row">
+                {% for item in lists %}
+                <div class="row">
+                    <div class="col-sm-5">
+                        <input type="checkbox" value="{{item}}" name="select">{{item}}
+                    </div>
+                    <div class="col-sm-7">
+                        <input type="text" name="{{item}}">
+                    </div>
+                </div>
+                {% endfor %}
                 </div>
             </form>
         </div>
